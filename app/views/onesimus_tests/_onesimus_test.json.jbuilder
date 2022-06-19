@@ -1,0 +1,2 @@
+json.extract! onesimus_test, :id, :name_of_insured, :address, :occupation, :telephone, :reg_number, :make, :model, :year_of_make, :business_private, :driver_name, :driver_address, :driver_age, :driver_telephone, :driving_license_no, :licence_class, :date_of_issue, :convicted_of_motoring_offence, :loss_date, :time_of_loss, :accident_location, :vehicle_speed, :nature_of_loss, :accident_desc, :report_date, :policy_number, :created_at, :updated_at
+json.url onesimus_test_url(onesimus_test, format: :json)

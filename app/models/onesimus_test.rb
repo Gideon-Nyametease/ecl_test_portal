@@ -1,0 +1,2 @@
+class OnesimusTest < ApplicationRecord
+end

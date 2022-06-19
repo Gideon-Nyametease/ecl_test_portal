@@ -1,0 +1,55 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_of_insured: MyString
+  address: MyString
+  occupation: MyString
+  telephone: MyString
+  reg_number: MyString
+  make: MyString
+  model: MyString
+  year_of_make: MyString
+  business_private: MyString
+  driver_name: MyString
+  driver_address: MyString
+  driver_age: 1
+  driver_telephone: MyString
+  driving_license_no: MyString
+  licence_class: MyString
+  date_of_issue: 2022-06-19
+  convicted_of_motoring_offence: false
+  loss_date: 2022-06-19
+  time_of_loss: 2022-06-19 10:25:23
+  accident_location: MyString
+  vehicle_speed: MyString
+  nature_of_loss: MyString
+  accident_desc: MyText
+  report_date: 2022-06-19
+  policy_number: MyString
+
+two:
+  name_of_insured: MyString
+  address: MyString
+  occupation: MyString
+  telephone: MyString
+  reg_number: MyString
+  make: MyString
+  model: MyString
+  year_of_make: MyString
+  business_private: MyString
+  driver_name: MyString
+  driver_address: MyString
+  driver_age: 1
+  driver_telephone: MyString
+  driving_license_no: MyString
+  licence_class: MyString
+  date_of_issue: 2022-06-19
+  convicted_of_motoring_offence: false
+  loss_date: 2022-06-19
+  time_of_loss: 2022-06-19 10:25:23
+  accident_location: MyString
+  vehicle_speed: MyString
+  nature_of_loss: MyString
+  accident_desc: MyText
+  report_date: 2022-06-19
+  policy_number: MyString

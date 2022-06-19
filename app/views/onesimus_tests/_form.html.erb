@@ -1,0 +1,142 @@
+<%= form_with(model: onesimus_test) do |form| %>
+  <% if onesimus_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(onesimus_test.errors.count, "error") %> prohibited this onesimus_test from being saved:</h2>
+
+      <ul>
+        <% onesimus_test.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name_of_insured %>
+    <%= form.text_field :name_of_insured %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :occupation %>
+    <%= form.text_field :occupation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telephone %>
+    <%= form.text_field :telephone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reg_number %>
+    <%= form.text_field :reg_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :make %>
+    <%= form.text_field :make %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year_of_make %>
+    <%= form.text_field :year_of_make %>
+  </div>
+
+  <div class="field">
+    <%= form.label :business_private %>
+    <%= form.text_field :business_private %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driver_name %>
+    <%= form.text_field :driver_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driver_address %>
+    <%= form.text_field :driver_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driver_age %>
+    <%= form.number_field :driver_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driver_telephone %>
+    <%= form.text_field :driver_telephone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driving_license_no %>
+    <%= form.text_field :driving_license_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :licence_class %>
+    <%= form.text_field :licence_class %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_of_issue %>
+    <%= form.date_select :date_of_issue %>
+  </div>
+
+  <div class="field">
+    <%= form.label :convicted_of_motoring_offence %>
+    <%= form.check_box :convicted_of_motoring_offence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :loss_date %>
+    <%= form.date_select :loss_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time_of_loss %>
+    <%= form.time_select :time_of_loss %>
+  </div>
+
+  <div class="field">
+    <%= form.label :accident_location %>
+    <%= form.text_field :accident_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vehicle_speed %>
+    <%= form.text_field :vehicle_speed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nature_of_loss %>
+    <%= form.text_field :nature_of_loss %>
+  </div>
+
+  <div class="field">
+    <%= form.label :accident_desc %>
+    <%= form.text_area :accident_desc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :report_date %>
+    <%= form.date_select :report_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policy_number %>
+    <%= form.text_field :policy_number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
