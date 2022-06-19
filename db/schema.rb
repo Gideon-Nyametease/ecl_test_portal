@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_19_102523) do
+ActiveRecord::Schema.define(version: 2022_06_19_103201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "media_uploads", force: :cascade do |t|
+    t.integer "onesimus_test_id"
+    t.string "image_name"
+    t.string "location"
+    t.boolean "active_status"
+    t.boolean "del_status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "onesimus_tests", force: :cascade do |t|
     t.string "name_of_insured"

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Onesimus test:</strong>
+  <%= @media_upload.onesimus_test_id %>
+</p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @media_upload.image_name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @media_upload.location %>
+</p>
+
+<p>
+  <strong>Active status:</strong>
+  <%= @media_upload.active_status %>
+</p>
+
+<p>
+  <strong>Del status:</strong>
+  <%= @media_upload.del_status %>
+</p>
+
+<%= link_to 'Edit', edit_media_upload_path(@media_upload) %> |
+<%= link_to 'Back', media_uploads_path %>

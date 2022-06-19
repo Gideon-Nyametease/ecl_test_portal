@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  onesimus_test_id: 1
+  image_name: MyString
+  location: MyString
+  active_status: false
+  del_status: false
+
+two:
+  onesimus_test_id: 1
+  image_name: MyString
+  location: MyString
+  active_status: false
+  del_status: false

@@ -1,0 +1,42 @@
+<%= form_with(model: media_upload) do |form| %>
+  <% if media_upload.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(media_upload.errors.count, "error") %> prohibited this media_upload from being saved:</h2>
+
+      <ul>
+        <% media_upload.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :onesimus_test_id %>
+    <%= form.number_field :onesimus_test_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_name %>
+    <%= form.text_field :image_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active_status %>
+    <%= form.check_box :active_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :del_status %>
+    <%= form.check_box :del_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

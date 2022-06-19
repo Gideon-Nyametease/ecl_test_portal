@@ -1,0 +1,2 @@
+class MediaUpload < ApplicationRecord
+end
