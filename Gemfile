@@ -5,6 +5,7 @@ ruby '2.7.1'
 
 #///////////////////////
 gem 'simple_form'
+gem "cloudinary"
 #//////////////////////
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

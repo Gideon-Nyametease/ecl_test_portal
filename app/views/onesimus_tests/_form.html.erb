@@ -48,7 +48,8 @@
         <%= f.input :report_date, as: :string %>
         <%= f.input :policy_number %>
         <br>
-        <input type="file" />
+        <!--<input type="file" />-->
+        <%= f.file_field :image, id: "avatar-upload" %>
       </div>
         
       <div class="row" style="margin-top:40px;">
