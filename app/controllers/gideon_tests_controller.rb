@@ -65,6 +65,7 @@ class GideonTestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def gideon_test_params
-      params.require(:gideon_test).permit(:first_name, :last_name, :dob, :nationality, :phone_number, :email, :id_type, :id_number, :home_address, :second_address, :occupation, :gender)
+      params.require(:gideon_test).permit(:first_name, :last_name, :dob, :nationality, :phone_number, :email, :id_type, :id_number, 
+        :home_address, :second_address, :occupation, :gender, :new_email, :new_password)
     end
 end
