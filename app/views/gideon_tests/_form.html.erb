@@ -1,0 +1,32 @@
+<%= simple_form_for(@gideon_test) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  
+  <div class="row" style="width:50%; margin: 0 auto;">
+    <div class="col-sm-6">
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :dob %>
+      <%= f.input :nationality %>
+      <%= f.input :phone_number %>
+      <%= f.input :email %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.input :id_type %>
+      <%= f.input :id_number %>
+      <%= f.input :home_address %>
+      <%= f.input :second_address %>
+      <%= f.input :occupation %>
+      <%= f.input :gender %>
+    </div>
+
+    <div class="row" style="margin-top:40px;">
+      <div>
+        <%= link_to 'Back', gideon_tests_path, class:"btn btn-md btn-outline-dark" %>
+        <%= f.button :submit, class:"btn btn-md btn-primary"  %>
+      </div>
+    </div>
+  </div>
+<% end %>
+

@@ -1,0 +1,2 @@
+class GideonTest < ApplicationRecord
+end

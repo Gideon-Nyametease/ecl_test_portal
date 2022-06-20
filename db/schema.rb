@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_19_103201) do
+ActiveRecord::Schema.define(version: 2022_06_20_090215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gideon_tests", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "dob"
+    t.string "nationality"
+    t.string "phone_number"
+    t.string "email"
+    t.string "id_type"
+    t.string "id_number"
+    t.string "home_address"
+    t.string "second_address"
+    t.string "occupation"
+    t.string "gender"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "media_uploads", force: :cascade do |t|
     t.integer "onesimus_test_id"
