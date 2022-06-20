@@ -5,22 +5,22 @@
   
   <div class="row" style="width:50%; margin: 0 auto;">
     <div class="col-sm-6">
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :dob %>
-      <%= f.input :nationality %>
-      <%= f.input :phone_number %>
-      <%= f.input :email %>
-      <%= f.input :id_type %>
+      <%= f.input :first_name, input_html:{id:"fname"} %>
+      <%= f.input :last_name, input_html:{id:"lname"}  %>
+      <%= f.input :dob, input_html:{id:"dob"} %>
+      <%= f.input :nationality, input_html:{id:"nation"}  %>
+      <%= f.input :phone_number, input_html:{id:"phone"} %>
+      <%= f.input :email, input_html:{id:"email"}  %>
+      <%= f.input :id_type, input_html:{id:"idtype"}  %>
     </div>
     <div class="col-sm-6">
-      <%= f.input :id_number %>
-      <%= f.input :home_address %>
-      <%= f.input :second_address %>
-      <%= f.input :occupation %>
-      <%= f.input :gender %>  
-      <%= f.input :new_email %>
-      <%= f.input :new_password %>
+      <%= f.input :id_number, input_html:{id:"idnum"}  %>
+      <%= f.input :home_address , input_html:{id:"addy"} %>
+      <%= f.input :second_address, input_html:{id:"addy2"}  %>
+      <%= f.input :occupation, input_html:{id:"work"} %>
+      <%= f.input :gender, input_html:{id:"gender" } %>  
+      <%= f.input :new_email, input_html:{id:"nemail"}  %>
+      <%= f.input :new_password, input_html:{id:"npwd"}  %>
     </div>
 
     <div class="row" style="margin-top:40px;">
