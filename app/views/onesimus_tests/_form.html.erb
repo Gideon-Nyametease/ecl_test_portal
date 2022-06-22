@@ -49,7 +49,7 @@
         <%= f.input :policy_number %>
         <br>
         <!--<input type="file" />-->
-        <%= f.file_field :image, id: "avatar-upload" %>
+        <%= f.file_field :images, multiple: true,input_html:{id: "avatar-upload"} %>
       </div>
         
       <div class="row" style="margin-top:40px;">
