@@ -6,6 +6,7 @@ ruby '2.7.1'
 #///////////////////////
 gem 'simple_form'
 gem "cloudinary"
+gem "mini_magick"
 #//////////////////////
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

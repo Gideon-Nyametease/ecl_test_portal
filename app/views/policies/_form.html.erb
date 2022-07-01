@@ -1,0 +1,39 @@
+
+<%= simple_form_for(@policy) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="row" style="width:50%; margin: 0 auto;">
+    <div class="col-sm-8">
+      <div class="form-inputs">
+        <%= f.input :policy_number %>
+        <%= f.input :insured_name %>
+        <%= f.input :insured_from, as: :string %>
+        <%= f.input :insured_to, as: :string %>
+        <%= f.input :premium_due %>
+        <%= f.input :active_status, input_html:{checked: "checked"}, as: :hidden %>
+        <%= f.input :del_status, as: :hidden  %>
+
+        <br>
+       
+      </div>
+
+      <div class="row" style="margin-top:40px;">
+        <div>
+          <%= link_to 'Back', policies_path, class:"btn btn-md btn-outline-dark" %>
+          <%= f.button :submit, class:"btn btn-md btn-primary"  %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div style="border: 2px solid blue; border-radius: 10px; padding: 150px 50px 150px 25px; background-color: #efefef;">
+        <%#= f.file_field :images, multiple: true,input_html:{id: "avatar-upload"} %>
+        <%= f.file_field :image,input_html:{id: "avatar-upload"} %>
+      </div>
+    </div>
+   
+  </div>
+
+<% end %>
+
+
+

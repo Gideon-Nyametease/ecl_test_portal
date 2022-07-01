@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :policies
   resources :gideon_tests
   resources :media_uploads
   resources :onesimus_tests

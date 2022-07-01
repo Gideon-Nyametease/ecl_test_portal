@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Policy number:</strong>
+  <%= @policy.policy_number %>
+</p>
+
+<p>
+  <strong>Insured name:</strong>
+  <%= @policy.insured_name %>
+</p>
+
+<p>
+  <strong>Insured from:</strong>
+  <%= @policy.insured_from %>
+</p>
+
+<p>
+  <strong>Insured to:</strong>
+  <%= @policy.insured_to %>
+</p>
+
+<p>
+  <strong>Premium due:</strong>
+  <%= @policy.premium_due %>
+</p>
+
+<p>
+  <strong>Active status:</strong>
+  <%= @policy.active_status %>
+</p>
+
+<p>
+  <strong>Del status:</strong>
+  <%= @policy.del_status %>
+</p>
+
+<%= link_to 'Edit', edit_policy_path(@policy) %> |
+<%= link_to 'Back', policies_path %>
