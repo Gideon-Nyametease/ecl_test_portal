@@ -3,7 +3,40 @@ class PoliciesController < ApplicationController
 
   # GET /policies or /policies.json
   def index
-    @policies = Policy.all
+   
+
+    if params[:filter].present?
+      search_str=""
+      search_arr=[]
+
+      filter_params = params[:filter]
+
+      @policy_no = filter_params["policy_no"]
+    
+
+
+      if @policy_no.present?
+        f_str = @policy_no
+        f_str = f_str.gsub("'","''")
+        search_arr << "policy_number iLike '#{f_str}' "
+        # search_arr << "policy_no iLIKE '#{@policy_no}' "
+      end
+
+      logger.info "+++++++++++++++++++++++++++++++"
+      logger.info search_arr.inspect
+
+      search_str << search_arr.join(" and ")
+
+      if !search_str.present?
+        @policies = Policy.all
+      else
+        @policies = Policy.where(search_str).order(created_at: :desc)
+        logger.info "THIS IS THE POLICY NUMBER WE ARE LOOKING FOR === #{@policies.inspect} === "
+      end
+
+    else
+      @policies = Policy.all
+    end
   end
 
   # GET /policies/1 or /policies/1.json

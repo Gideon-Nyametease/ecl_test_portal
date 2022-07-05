@@ -7,14 +7,22 @@
   <div class="my-content"> 
     <div class="shadow-box-no-border">
         <hr/>
-        <div class="d-flex justify-content-end">
-            <!--<button class="btn btn-outline-primary">Download CSV  <i class="fa fa-download"></i></button>
-            <button class="btn btn-outline-primary">Search  <i class="fa fa-search"></i></button>-->
+        <div class="d-flex justify-content-between">
+            <div class="left">
+              <%#= simple_form_for :filter, html:{autocomplete:'off',id:'filterForm'} do |f| %>
+              <%= simple_form_for :filter, url: policies_path, :method =>'get' ,html: { class: 'form-horizontal' } do |f| %>
+                <div>
+                  <%#= f.text_field :hdp_id, id: "id1"%>
+                  <input type="text" name="filter[policy_no]" id="id1" placeholder="Search By Policy No."/>
+                  <%= f.submit "Search", class: "btn btn-md btn-secondary",:data => {:disable_with => 'Search'} %>
+                </div>
+              <% end %>
+            </div>
 
             <%= link_to new_policy_path, class:"btn btn-outline-primary float-left" do %>
                 <span class="glyphicon glyphicon-plus"></span>
-                New Policy
-            <% end %>
+                Create Policy
+            <% end %>  
         </div>
     
 
