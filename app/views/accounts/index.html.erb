@@ -1,0 +1,89 @@
+<div style="width: 70%; margin: 0 auto;">
+  <p id="notice"><%= notice %></p>
+  <br><br><br>
+
+  <h1>Account Management</h1>
+
+  <div class="my-content"> 
+    <div class="shadow-box-no-border">
+        <hr/>
+        <div class="d-flex justify-content-between">
+            <div class="left">
+             
+              <%= simple_form_for :filter, url: accounts_path, :method =>'get' ,html: { class: 'form-horizontal' } do |f| %>
+                <div>
+                  
+                  <input type="text" name="filter[account_no]" id="id1" placeholder="Search By Account No."/>
+                  <%= f.submit "Search", class: "btn btn-md btn-secondary",:data => {:disable_with => 'Search'} %>
+                </div>
+              <% end %>
+            </div>
+
+            <div>
+              <%= link_to 'Refresh', accounts_path, class:"btn btn-dark "%>
+            </div>
+
+            <%= link_to new_account_path, class:"btn btn-outline-primary float-left" do %>
+                <span class="glyphicon glyphicon-plus"></span>
+                Create Account
+            <% end %>  
+        </div>
+    
+
+        <div class="table-responsive">
+        <hr/>
+            <table class="table table-striped table-hover">
+                <thead class="bg-light">
+                  <th>#</th>
+                  <th>Account Number</th>
+                  <th>Account Name</th>
+                  <th>Branch</th>
+                  <th>Status</th>
+                  <th colspan="3"></th>
+                </thead>
+
+                <tbody>
+                <% @accounts.each_with_index do |account, index| %>
+                    <tr>
+                      <td><%= index + 1 %></td>
+                      <td><%= account.account_name %></td>
+                      <td><%= account.account_number %></td>
+                      <td><%= account.branch %></td>
+                      <td>
+                        <% if account.active_status %>
+                          Active  
+                        <% else %>
+                          Closed  
+                        <% end %>
+                      </td>
+                      <td>
+                        <% if account.active_status %>
+                          <%= link_to 'Close Account?', account, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %>
+                        <% else %>
+                          <%= link_to 'Reopen Account?', account, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-success" %>
+                        <% end %>
+                      </td>
+                      <td><%= link_to 'Show', account, class:"btn btn-outline-dark"  %></td>
+                      <td><%= link_to 'Edit', edit_account_path(account), class:"btn btn-outline-primary"  %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

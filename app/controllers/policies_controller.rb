@@ -3,8 +3,6 @@ class PoliciesController < ApplicationController
 
   # GET /policies or /policies.json
   def index
-   
-
     if params[:filter].present?
       search_str=""
       search_arr=[]

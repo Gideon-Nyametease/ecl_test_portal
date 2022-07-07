@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Account name:</strong>
+  <%= @account.account_name %>
+</p>
+
+<p>
+  <strong>Account number:</strong>
+  <%= @account.account_number %>
+</p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @account.branch %>
+</p>
+
+<p>
+  <strong>Active status:</strong>
+  <%= @account.active_status %>
+</p>
+
+<p>
+  <strong>Del status:</strong>
+  <%= @account.del_status %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>
