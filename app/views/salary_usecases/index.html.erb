@@ -1,0 +1,74 @@
+<div style="width: 70%; margin: 0 auto;">
+  <p id="notice"><%= notice %></p>
+  <br><br><br>
+
+  <h1>Salary List</h1>
+
+  <div class="my-content"> 
+    <div class="shadow-box-no-border">
+        <hr/>
+        <div class="d-flex justify-content-between">
+            <div class="left">
+              <%#= simple_form_for :filter, html:{autocomplete:'off',id:'filterForm'} do |f| %>
+              <%= simple_form_for :filter, url: salary_usecases_path, :method =>'get' ,html: { class: 'form-horizontal' } do |f| %>
+                <div>
+                  <%#= f.text_field :hdp_id, id: "id1"%>
+                  <input type="text" name="filter[employee_name]" id="id1" placeholder="Search By Employee Name"/>
+                  <%= f.submit "Search", class: "btn btn-md btn-secondary",:data => {:disable_with => 'Searching..'} %>
+                </div>
+              <% end %>
+            </div>
+
+            <div>
+              <%= link_to 'Refresh', salary_usecases_path, class:"btn btn-dark "%>
+            </div>
+
+            <%= link_to new_salary_usecase_path, class:"btn btn-outline-primary float-left" do %>
+                <span class="glyphicon glyphicon-plus"></span>
+                New Entry
+            <% end %>  
+        </div>
+    
+
+        <div class="table-responsive">
+        <hr/>
+            <table class="table table-striped table-hover">
+                <thead class="bg-light">
+                  <th>#</th>
+                  <th>Employee name</th>
+                  <th>Position</th>
+                  <th>Department</th>
+                  <th>Date joined</th>
+                  <th>Par period</th>
+                  <th>Work days</th>
+                  <th>Gross amount</th>
+                  <th>Net amount</th>
+                  <th>Processed</th>
+                  <th colspan="3"></th>
+                </thead>
+
+                <tbody>
+                <% @salary_usecases.each_with_index do |salary_usecase, index| %>
+                    <tr>
+                      <td><%= salary_usecase.employee_name %></td>
+                      <td><%= salary_usecase.position %></td>
+                      <td><%= salary_usecase.department %></td>
+                      <td><%= salary_usecase.date_joined %></td>
+                      <td><%= salary_usecase.pay_period %></td>
+                      <td><%= salary_usecase.work_days %></td>
+                      <td><%= salary_usecase.gross_amount %></td>
+                      <td><%= salary_usecase.net_amount %></td>
+                      <td><%= salary_usecase.processed %></td>
+                      <td><%= link_to 'Show', salary_usecase, class:"btn btn-outline-dark"  %></td>
+                      <td><%= link_to 'Edit', edit_salary_usecase_path(salary_usecase), class:"btn btn-outline-primary"  %></td>
+                      <td><%= link_to 'Destroy', salary_usecase, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

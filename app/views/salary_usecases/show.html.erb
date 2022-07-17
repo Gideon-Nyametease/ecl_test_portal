@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee name:</strong>
+  <%= @salary_usecase.employee_name %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @salary_usecase.position %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @salary_usecase.department %>
+</p>
+
+<p>
+  <strong>Date joined:</strong>
+  <%= @salary_usecase.date_joined %>
+</p>
+
+<p>
+  <strong>Par period:</strong>
+  <%= @salary_usecase.pay_period %>
+</p>
+
+<p>
+  <strong>Work days:</strong>
+  <%= @salary_usecase.work_days %>
+</p>
+
+<p>
+  <strong>Gross amount:</strong>
+  <%= @salary_usecase.gross_amount %>
+</p>
+
+<p>
+  <strong>Net amount:</strong>
+  <%= @salary_usecase.net_amount %>
+</p>
+
+<p>
+  <strong>Active status:</strong>
+  <%= @salary_usecase.active_status %>
+</p>
+
+<p>
+  <strong>Del status:</strong>
+  <%= @salary_usecase.del_status %>
+</p>
+
+<p>
+  <strong>Processed:</strong>
+  <%= @salary_usecase.processed %>
+</p>
+
+<%= link_to 'Edit', edit_salary_usecase_path(@salary_usecase) %> |
+<%= link_to 'Back', salary_usecases_path %>

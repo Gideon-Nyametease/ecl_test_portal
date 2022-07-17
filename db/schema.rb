@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_07_121034) do
+ActiveRecord::Schema.define(version: 2022_07_17_140530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,22 @@ ActiveRecord::Schema.define(version: 2022_07_07_121034) do
     t.decimal "premium_due"
     t.boolean "active_status"
     t.boolean "del_status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "salary_usecases", force: :cascade do |t|
+    t.string "employee_name"
+    t.string "position"
+    t.string "department"
+    t.date "date_joined"
+    t.string "pay_period"
+    t.string "work_days"
+    t.decimal "gross_amount"
+    t.decimal "net_amount"
+    t.boolean "active_status", default: true
+    t.boolean "del_status", default: false
+    t.boolean "processed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

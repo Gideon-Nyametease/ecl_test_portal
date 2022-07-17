@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :salary_usecases
   resources :accounts
   resources :policies
   resources :gideon_tests
