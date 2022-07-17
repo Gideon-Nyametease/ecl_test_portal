@@ -1,5 +1,5 @@
 class SalaryUsecasesController < ApplicationController
-  before_action :set_salary_usecase, only: %i[ show edit update destroy ]
+  before_action :set_salary_usecase, only: %i[ show edit update destroy process_payment]
 
   # GET /salary_usecases or /salary_usecases.json
   def index
@@ -87,6 +87,24 @@ class SalaryUsecasesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to salary_usecases_url, notice: "Salary usecase was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def process_payment
+    if @salary_usecase.processed
+      @salary_usecase.processed = false
+      @salary_usecase.save(validate: false)
+      respond_to do |format|
+        format.html { redirect_to salary_usecases_url, notice: "Salary Processing Cancelled." }
+        format.json { head :no_content }
+      end
+    else
+      @salary_usecase.processed = true
+      @salary_usecase.save(validate: false)
+      respond_to do |format|
+        format.html { redirect_to salary_usecases_url, notice: "Salary was successfully processed." }
+        format.json { head :no_content }
+      end
     end
   end
 

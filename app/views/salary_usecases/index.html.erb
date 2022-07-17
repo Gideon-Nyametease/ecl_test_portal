@@ -50,6 +50,7 @@
                 <tbody>
                 <% @salary_usecases.each_with_index do |salary_usecase, index| %>
                     <tr>
+                      <td><%= index + 1 %></td>
                       <td><%= salary_usecase.employee_name %></td>
                       <td><%= salary_usecase.position %></td>
                       <td><%= salary_usecase.department %></td>
@@ -58,10 +59,17 @@
                       <td><%= salary_usecase.work_days %></td>
                       <td><%= salary_usecase.gross_amount %></td>
                       <td><%= salary_usecase.net_amount %></td>
-                      <td><%= salary_usecase.processed %></td>
+                      <td>
+                        <% if salary_usecase.processed %>
+                          <button class="btn btn-secondary" disabled>Processed</button>
+                          <%#= link_to '', salary_usecase, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %>
+                        <% else %>
+                          <%= link_to 'Process', salary_usecase, method: :process_payment, data: { confirm: 'Are you sure?' }, class:"btn btn-success" %>
+                        <% end %>
+                      </td>
                       <td><%= link_to 'Show', salary_usecase, class:"btn btn-outline-dark"  %></td>
                       <td><%= link_to 'Edit', edit_salary_usecase_path(salary_usecase), class:"btn btn-outline-primary"  %></td>
-                      <td><%= link_to 'Destroy', salary_usecase, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %></td>
+                      <%#= link_to 'Destroy', salary_usecase, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %>
                     </tr>
                 <% end %>
                 </tbody>
